@@ -20,6 +20,12 @@ class LinkedList:
         else:
             raise Exception ("LinkedList is empty")
 
+    def second_last_node(self):
+        n = self.head
+        while n.next.next is not None:
+            n = n.next
+        print (n.value)
+
     def __iter__(self):
         n = self.head
         while n is not None:
@@ -32,14 +38,11 @@ class LinkedList:
 if __name__ == '__main__':
     a=LinkedList()
     a.prepend(5)
-    print(a)
+    a.prepend(13)
     a. prepend(10)
-    print(a)
-    a.pop()
-    print(a)
-    a.pop()
-    print(a)
-    a.pop()
+    a.prepend(20)
+    a.prepend(15)
+    a.second_last_node()
 
 
 
